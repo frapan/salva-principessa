@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Salva la principessa!</title>
+	<link rel="stylesheet" type="text/css" href="css/avventura.css">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<h1 class="title">Salva la principessa!</h1>
+	<!--<h1 class="title">  </h1>-->
+	<div class="main_container">
+		<div class="descr_container">
+			<div class="imageArea">
+				<img src="img/crocevia.jpg" style="height:100%">
+			</div>
+			<div class="textArea">
+				<div class="titleArea">
+					<!--Nome della stanza<br/>-->
+				</div>
+				<div class="descriptionArea">
+					<!--Descrizione della stanza<br/>-->
+				</div>
+				<div class="exitsArea">
+					Direzioni percorribili: <span class="exitsList"><!--N, S, E, O--></span>
+				</div>
+				<div class="objectsArea">
+					Vedi:
+					<ul class="objectsList">
+						<!--<li>Questo</li>
+						<li>Quello</li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="commandHistoryArea">
+			Comandi eseguiti:
+			<div class="commandHistoryList">
+				<!--<div class="command">Prendi la mela</div>
+				<div class="result">Hai preso la mela</div>
+				<div class="command">Prendi la mela</div>
+				<div class="result">Hai preso la mela</div>-->
+			</div>
+		</div>
+	</div>
+	<div class="commandArea">
+		<form>
+			Cosa devo fare?
+			<input type="text" name="comando" />
+			<input type="submit" value="Invia" />
+			<button name="carica">Carica</button>
+			<button name="salva">Salva</button>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="js/require.js"></script>
+	<script type="text/javascript" src="js/require_config.js"></script>
+	<script type="text/javascript">
+		require(['adv_bootstrapper', 'adv_data', 'jquery'], function(adv_bootstrapper, adv_data, $){
+			// Qui dovrei passare gli elementi html utilizzati dal motore e i dati dell'avventura
+			adv_bootstrapper.init({
+				adv_data: adv_data,
+				$titleArea: $('.titleArea'),
+				$image: $('.imageArea img'),
+				$descriptionArea: $('.descriptionArea'),
+				$objectsArea: $('.objectsArea'),
+				$objectsList: $('.objectsList'),
+				$exitsList: $('.exitsList'),
+				$commandHistoryArea: $('.commandHistoryArea'),
+				$commandHistoryList: $('.commandHistoryList'),
+				$commandForm: $('form'),
+				$commandInput: $('input[type=text]'),
+				$salvaBtn: $('button[name=salva]'),
+				$caricaBtn: $('button[name=carica]')
+			});
+
+		})
+	</script>
+</body>
